@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:tab_container/tab_container.dart';
-import 'Converter.dart';
+import 'DrawerPage.dart';
 import 'SettingPage.dart';
-import 'next.dart';
+import 'infoPage.dart';
+import 'ConverterPage.dart';
 
 class ExamplePage extends StatefulWidget {
   const ExamplePage({Key? key}) : super(key: key);
@@ -43,6 +43,9 @@ class _ExamplePageState extends State<ExamplePage> {
         title: const Text('Currency converter'),
         centerTitle: true,
       ),
+      drawer:const Drawer(
+        child: DrawerPage(),
+      ),
       body: SizedBox(
         height: 900,
         child: Column(
@@ -78,7 +81,7 @@ class _ExamplePageState extends State<ExamplePage> {
                     borderRadius: BorderRadius.circular(25),
                   ),
                   height: MediaQuery.of(context).size.height * .78,
-                  child: const HomePage(),
+                  child: const infoPage(),
                 ),
               ],
             )
@@ -115,16 +118,21 @@ class _ExamplePageState extends State<ExamplePage> {
               thickness: 2,
               color: Colors.black,
             ),
+            const CircleAvatar(
+              radius: 30,
+              backgroundImage: NetworkImage('https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80'),
+            ),
             Row(
               children: [
+                
                 Flexible(
                   flex: 5,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text('username:'),
-                      Text('email:'),
-                      Text('birthday:'),
+                    children:  [
+                      Text('username:',style: Theme.of(context).textTheme.titleSmall),
+                      Text('email:',style: Theme.of(context).textTheme.titleSmall),
+                      Text('birthday:',style: Theme.of(context).textTheme.titleSmall),
                     ],
                   ),
                 ),
@@ -135,9 +143,9 @@ class _ExamplePageState extends State<ExamplePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
-                      Text('John Doe'),
-                      Text('john.doe@email.com'),
-                      Text('1/1/1985'),
+                      Text('Arshit Vadsak'),
+                      Text('Arshit@gmail.com'),
+                      Text('1/1/2002'),
                     ],
                   ),
                 ),

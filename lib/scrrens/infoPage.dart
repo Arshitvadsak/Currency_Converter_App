@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../api_helper/api_helper.dart';
 import '../modals/currency.dart';
-import 'DrawerPage.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class infoPage extends StatefulWidget {
+  const infoPage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<infoPage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<infoPage> {
   final TextEditingController searchController = TextEditingController();
   late Future<List<Currency>?> getData;
 
@@ -108,26 +106,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed('home');
-            },
-            child: Icon(Icons.mp_sharp),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed('money');
-            },
-            child: Icon(Icons.tab),
-          ),
-        ],
-      ),
+      
     );
   }
 }

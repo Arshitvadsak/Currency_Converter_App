@@ -8,7 +8,7 @@ class APIHelper {
   static final APIHelper apiHelper = APIHelper._();
 
   Future<List<Currency>?> fetchWeatherData() async {
-    String apiKey = "7pcl8Jvox8cdPmIjiOYwZmXUfKTQQLwrrwmRg1oh";
+    String apiKey = "koKiZJ7Sb6WtbhMjIlkTNYJYvD1N39Lj5sJ4YdnG";
     String api = "https://api.currencyapi.com/v3/latest?apikey=$apiKey";
     
 
